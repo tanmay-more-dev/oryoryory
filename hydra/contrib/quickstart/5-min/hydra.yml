@@ -1,0 +1,30 @@
+serve:
+  cookies:
+    same_site_mode: Lax
+
+urls:
+  self:
+    issuer: http://172.16.17.205:4444
+  consent: http://172.16.17.205:4455/consent
+  login: http://172.16.17.205:4455/login
+  logout: http://172.16.17.2054455/logout
+  identity_provider:
+    url: http://172.16.17.205:4434/
+    publicUrl: http://172.16.17.205:4433/
+
+secrets:
+  system:
+    - youReallyNeedToChangeThis
+
+oidc:
+  subject_identifiers:
+    supported_types:
+      - pairwise
+      - public
+    pairwise:
+      salt: youReallyNeedToChangeThis
+
+log:
+  level: trace
+  format: text
+  leak_sensitive_values: true
